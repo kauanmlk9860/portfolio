@@ -1,8 +1,10 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const profile = {
   name: "Kauan Rodrigues",
   role: "Desenvolvedor Full Stack",
   location: "Osasco, SP",
-  avatar: "/avatar.png",
+  avatar: `${basePath}/avatar.png`,
   tagline: "Transformo ideias em aplicações reais — do front-end ao back-end.",
   bio: [
     "Tenho 18 anos, sou de Osasco (SP) e foi no SENAI Jandira que tudo começou.",
