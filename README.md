@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio — Kauan Rodrigues
 
-## Getting Started
+Site pessoal com meus projetos, experiência e formação. Construído com Next.js, TypeScript e Tailwind CSS, publicado no GitHub Pages.
 
-First, run the development server:
+🔗 **[kauanmlk9860.github.io/portfolio](https://kauanmlk9860.github.io/portfolio/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+- [Next.js](https://nextjs.org) (App Router, exportação estática)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+
+## Estrutura
+
+```
+src/
+  app/            # layout, página principal e estilos globais
+  components/     # seções e componentes de UI (Hero, About, Projects, Skills, Contact...)
+  data/           # conteúdo do site (profile.ts, projects.ts) — editar aqui para atualizar textos e projetos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para atualizar o conteúdo (bio, experiência, habilidades, links de contato), edite [`src/data/profile.ts`](src/data/profile.ts). Para adicionar ou remover projetos, edite [`src/data/projects.ts`](src/data/projects.ts).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Rodando localmente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Abra [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O deploy é automático: todo push na branch `master` roda o workflow em [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), que builda o site como export estático (`next build` com `output: "export"`) e publica no GitHub Pages.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para gerar o build estático manualmente:
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Os arquivos são gerados na pasta `out/`.
